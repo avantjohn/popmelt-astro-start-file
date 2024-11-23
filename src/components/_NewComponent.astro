@@ -1,0 +1,30 @@
+---
+const placeholder = `World`;
+---
+
+<script>
+    import { animate, scroll } from 'motion';
+    animate('.fade', { opacity: [0, 1] }, { duration: 2 });
+</script>
+
+<div class="wrap fade">
+    <h1>Hello {placeholder}</h1>
+</div>
+
+<style>
+    .wrap {
+        max-width: 100%;
+        padding: var(--s-global-padding);
+    }
+    /* TABLET - Responsive Styles */
+    @media (max-width: 768px) {
+        .div {
+        }
+    }
+
+    /* MOBILE - Responsive Styles */
+    @media (max-width: 425px) {
+        .div {
+        }
+    }
+</style>

@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+const placeholder = `World`;
+---
+
+<script>
+    import { animate, scroll } from 'motion';
+    animate('.fade', { opacity: [0, 1] }, { duration: 2 });
+</script>
+
+<Layout title="Page Name">
+    <div class="main-wrap">
+        <section>
+            <div class="hero-wrap fade">
+                <h1>Hello {placeholder}</h1>
+            </div>
+        </section>
+        <section>
+            <div class="wrap">
+                <h2>Section</h2>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .main-wrap {
+        max-width: 100%;
+        flex-grow: 1;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-wrap {
+        height: 50vh;
+        padding: var(--s-global-padding);
+    }
+
+    .wrap {
+        height: 80vh;
+        padding: var(--s-global-padding);
+    }
+
+    /* TABLET - Responsive Styles */
+    @media (max-width: 768px) {
+        .div {
+        }
+    }
+
+    /* MOBILE - Responsive Styles */
+    @media (max-width: 425px) {
+        .div {
+        }
+    }
+</style>

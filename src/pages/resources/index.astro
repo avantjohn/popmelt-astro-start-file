@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const navItems = [
+    { linkText: 'Fonts', href: '/resources' },
+    { linkText: 'Colors', href: '/resources/colors' }
+];
+
+const placeholder = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis velit. Nulla tincidunt fermentum enim ut semper. Curabitur efficitur augue nec metus porta cursus. Maecenas eleifend id purus condimentum euismod. Morbi pulvinar, lectus vitae vulputate laoreet, orci ante egestas mi, ut faucibus nisl enim nec diam.
+`;
+---
+
+<script>
+    import { animate, scroll } from 'motion';
+    animate('.fade', { opacity: [0, 1] }, { duration: 2 });
+</script>
+
+<Layout title="Popmelt Docs">
+    <section>
+        <h1 class="page-header">docs</h1>
+        <div class="wrap">
+            {
+                !!navItems?.length && (
+                    <ul class="nav-links">
+                        {navItems.map((item) => (
+                            <li>
+                                <a href={item.href} class="nav-link fs-p-sm">
+                                    {item.linkText}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                )
+            }
+            <h1>Heading 1 Lorem Ipsum</h1>
+            <br />
+            <h2>Heading 2 Lorem Ipsum</h2>
+            <br />
+            <h3>Heading 3 Lorem Ipsum</h3>
+            <br />
+            <h4>Heading 4 Lorem Ipsum</h4>
+            <br />
+            <h5>Heading 5 Lorem Ipsum</h5>
+            <br />
+            <h6>Heading 6 Lorem Ipsum</h6>
+            <br />
+            <p class="fs-p-lg">{placeholder}</p>
+            <br />
+            <p class="fs-p-md">{placeholder}</p>
+            <br />
+            <p class="fs-p-sm">{placeholder}</p>
+            <br />
+            <div class="fs-label-lg">Label LG</div>
+            <br />
+            <div class="fs-label-md">Label MD</div>
+            <br />
+            <div class="fs-label-sm">Label SM</div>
+            <br />
+            <div class="fs-label-xs">Label XS</div>
+            <br />
+            <div class="fs-label-xxs">Label XXS</div>
+            <br />
+            <button class="button"> Lorem Ipsum </button>
+            <br />
+            <br />
+            <a href="https://docs.netlify.com/frameworks/astro/" role="button">Link Lorem Ipsum</a>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    section {
+        max-width: 100%;
+        flex-grow: 1;
+    }
+    .page-header {
+        padding: var(--s-global-padding);
+        border-bottom: var(--c-border-primary) 1px solid;
+    }
+
+    .wrap {
+        padding: 0 var(--s-global-padding) 5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        border-bottom: var(--c-border-primary) 1px solid;
+    }
+
+    .nav-link {
+        background-color: var(--c-fill-primary);
+        color: var(--c-text-alt-primary);
+        padding: 0.33rem 0.75rem;
+        border-radius: var(--b-radius-md);
+    }
+
+    .nav-link:hover {
+        background: var(--c-fill-secondary);
+    }
+
+    /* TABLET - Responsive Styles */
+    @media (max-width: 768px) {
+        .wrap {
+        }
+    }
+
+    /* MOBILE - Responsive Styles */
+    @media (max-width: 425px) {
+        .wrap {
+        }
+    }
+</style>

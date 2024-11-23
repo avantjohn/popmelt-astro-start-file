@@ -1,0 +1,44 @@
+/* COLOR THEME STYLES */
+
+:root {
+    background-color: var(--c-bg-primary);
+    color: var(--c-text-primary);
+}
+
+/* Theme Light Palette */
+
+:root {
+    --c-text-primary: var(--c-gray-800);
+    --c-text-secondary: var(--c-gray-500);
+    --c-text-alt-primary: var(--c-gray-100);
+    --c-bg-primary: var(--c-gray-50);
+    --c-surface-primary: var(--c-white-600);
+    --c-surface-secondary: var(--c-white-100);
+    --c-surface-alt-primary: var(--c-gray-950);
+    --c-fill-primary: var(--c-violet-700);
+    --c-fill-secondary: color-mix(in oklch, var(--c-fill-primary), black 10%);
+    --c-border-primary: var(--c-gray-200);
+    --c-border-secondary: var(--c-gray-100);
+    --c-icon-primary: var(--c-gray-500);
+    --c-icon-secondary: var(--c-gray-50);
+    --c-brand-primary: var(--c-violet-700);
+}
+
+/* Theme Dark Palette */
+
+html.dark {
+    --c-text-primary: var(--c-gray-100);
+    --c-text-secondary: var(--c-gray-400);
+    --c-text-alt-primary: var(--c-gray-100);
+    --c-bg-primary: var(--c-black-900);
+    --c-surface-primary: var(--c-black-100);
+    --c-surface-secondary: rgba(17, 24, 39, 0.3);
+    --c-surface-alt-primary: var(--c-gray-200);
+    --c-fill-primary: var(--c-violet-800);
+    --c-fill-secondary: color-mix(in oklch, var(--c-fill-primary), black 10%);
+    --c-border-primary: var(--c-gray-900);
+    --c-border-secondary: rgba(31, 41, 55, 0.8);
+    --c-icon-primary: var(--c-gray-400);
+    --c-icon-secondary: var(--c-gray-50);
+    --c-brand-primary: var(--c-violet-500);
+}

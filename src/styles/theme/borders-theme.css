@@ -1,0 +1,16 @@
+/* BORDER STYLES */
+
+/* Border Thickness */
+:root {
+    --b-thin: 1px;
+    --b-thick: 2px;
+}
+
+/* Border Radius */
+:root {
+    --b-radius-xl: 1.125rem;
+    --b-radius-lg: 0.875rem;
+    --b-radius-md: 0.5rem;
+    --b-radius-sm: 0.375rem;
+    --b-radius-xs: 0.2125rem;
+}

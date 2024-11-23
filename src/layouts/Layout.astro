@@ -1,10 +1,25 @@
 ---
-import '../../src/styles/globals.css';
+/* Import CSS Utilities */
+import '../../src/styles/utilities/css-reset.css';
+import '../../src/styles/utilities/smooth-scroll.css';
+
+/* Import Global Theme Styles */
+import '../../src/styles/theme/spacing-theme.css';
+import '../../src/styles/theme/borders-theme.css';
+import '../../src/styles/theme/colors-global.css';
+import '../../src/styles/theme/colors-theme.css';
+import '../../src/styles/theme/fonts-theme.css';
+import '../../src/styles/custom.css';
+
+/* Import Fonts */
 import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
 import '@fontsource/inter/800.css';
 import interFont400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
+import interFont500 from '@fontsource/inter/files/inter-latin-500-normal.woff2?url';
 import interFont800 from '@fontsource/inter/files/inter-latin-800-normal.woff2?url';
 
+/* Import Site Wide Components */
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -16,23 +31,61 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
-        <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interFont400} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={interFont500} crossorigin />
         <link rel="preload" as="font" type="font/woff2" href={interFont800} crossorigin />
+        <script>
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        </script>
     </head>
-    <body class="antialiased text-white bg-[#355C7D]">
-        <div class="flex flex-col min-h-screen px-6 bg-grid-pattern sm:px-12">
-            <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
-                <main class="grow"><slot /></main>
-                <Footer />
-            </div>
+    <body>
+        <div class="page-wrap">
+            <Header />
+            <main><slot /></main>
+            <Footer />
         </div>
+        <script src="../scripts/app.ts"></script>
     </body>
 </html>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100svh;
+        margin: 0;
+        max-width: 100%;
+        overflow-x: hidden;
+        background-color: var(--c-bg-secondary);
+    }
+
+    .page-wrap {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        width: 100%;
+        align-items: center;
+    }
+
+    main {
+        display: flex;
+        flex-grow: 1;
+        width: 100%;
+        max-width: 1920px;
+        background-color: var(--c-bg-primary);
+        border-left: var(--c-border-primary) 0px solid;
+        border-right: var(--c-border-primary) 0px solid;
+    }
+</style>

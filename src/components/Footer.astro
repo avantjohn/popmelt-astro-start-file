@@ -1,9 +1,39 @@
 ---
-
+const footerTagline = `© 2024 POPMELT - build. together.`;
 ---
 
-<footer class="pt-16 pb-12 sm:pt-24 sm:pb-16">
-    <p class="text-sm">
-        <a href="https://docs.netlify.com/frameworks/astro/" class="decoration-dashed text-primary underline-offset-8"> Astro on Netlify </a>
-    </p>
+<footer>
+    <div class="wrap">
+        <div class="footer-text fs-label-xs">{footerTagline}</div>
+    </div>
 </footer>
+
+<style>
+    footer {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        padding: 2rem var(--s-global-padding);
+        border-top: var(--c-border-primary) 1px solid;
+        background-color: var(--c-bg-primary);
+    }
+    .wrap {
+        display: flex;
+        flex: 1;
+    }
+
+    .footer-text {
+        display: flex;
+    }
+    /* TABLET - Responsive Styles */
+    @media (max-width: 768px) {
+        .wrap {
+        }
+    }
+
+    /* MOBILE - Responsive Styles */
+    @media (max-width: 425px) {
+        .wrap {
+        }
+    }
+</style>

@@ -1,0 +1,17 @@
+/* SPACING SYSTEM */
+
+:root {
+    --s-global-padding: 4rem;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --s-global-padding: 2rem;
+    }  
+}
+
+@media (max-width: 425px) {
+    :root {
+        --s-global-padding: 1.5rem;
+    }
+}

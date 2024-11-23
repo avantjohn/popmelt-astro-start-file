@@ -9,18 +9,25 @@ interface Props {
 const { title, text, linkText, href } = Astro.props;
 ---
 
-<div class="bg-white text-neutral-600 card">
+<div class="card">
     <div class="card-body">
-        {title && <h3 class="text-neutral-900 card-title">{title}</h3>}
+        {title && <h3 class="card-title">{title}</h3>}
         {text && <p>{text}</p>}
         {
             linkText && href && (
-                <div class="card-actions">
-                    <a href={href} class="link text-neutral-900">
-                        {linkText}
-                    </a>
+                <div class="card-actions button">
+                    <a href={href}>{linkText}</a>
                 </div>
             )
         }
     </div>
 </div>
+
+<style>
+    .card {
+        background-color: var(--c-surface-primary);
+        border: var(--c-border-primary) 1px solid;
+        padding: 2rem;
+        border-radius: 12px;
+    }
+</style>

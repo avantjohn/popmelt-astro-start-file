@@ -1,0 +1,298 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const navItems = [
+    { linkText: 'Fonts', href: '/resources' },
+    { linkText: 'Colors', href: '/resources/colors' }
+];
+
+const placeholder = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis velit. Nulla tincidunt fermentum enim ut semper. Curabitur efficitur augue nec metus porta cursus. Maecenas eleifend id purus condimentum euismod. Morbi pulvinar, lectus vitae vulputate laoreet, orci ante egestas mi, ut faucibus nisl enim nec diam.
+`;
+---
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from('.fade', { opacity: 0, duration: 1, delay: 0.5, ease: 'power1.out' });
+</script>
+
+<Layout title="Colors - Theme">
+    <div class="main-wrap">
+        <section>
+            <div class="page-header">
+                <h1 class="page-header-title">colors</h1>
+            </div>
+        </section>
+        <section>
+            <div class="wrap">
+                {
+                    !!navItems?.length && (
+                        <ul class="nav-links">
+                            {navItems.map((item) => (
+                                <li>
+                                    <a href={item.href} class="nav-link fs-p-sm">
+                                        {item.linkText}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    )
+                }
+            </div>
+        </section>
+        <section>
+            <div class="wrap">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr class="fs-label-xs">
+                                <th>Text</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="table-item">
+                                        <div class="tag">
+                                            <div class="tag-icon">
+                                                <div class="tag-color-swatch" style="background-color: var(--c-text-primary);"></div>
+                                            </div>
+                                            <div class="tag-label fs-label-sm">c-text-primary</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table-item">
+                                        <div class="tag">
+                                            <div class="tag-icon">
+                                                <div class="tag-color-swatch" style="background-color: var(--c-gray-800);"></div>
+                                            </div>
+                                            <div class="tag-label fs-label-sm">c-gray-800</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table-item">
+                                        <div class="tag">
+                                            <div class="tag-icon">
+                                                <div class="tag-color-swatch" style="background-color: var(--c-gray-100);"></div>
+                                            </div>
+                                            <div class="tag-label fs-label-sm">c-gray-100</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table-item">
+                                        <div class="tag">
+                                            <div class="tag-label fs-label-sm">color: var(--c-text-primary)</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-item">
+                                        <div class="tag">
+                                            <div class="tag-icon">
+                                                <div class="tag-color-swatch" style="background-color: var(--c-text-secondary);"></div>
+                                            </div>
+                                            <div class="tag-label fs-label-sm">c-text-secondary</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table-item">
+                                        <div class="tag">
+                                            <div class="tag-icon">
+                                                <div class="tag-color-swatch" style="background-color: var(--c-gray-500);"></div>
+                                            </div>
+                                            <div class="tag-label fs-label-sm">c-gray-500</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table-item">
+                                        <div class="tag">
+                                            <div class="tag-icon">
+                                                <div class="tag-color-swatch" style="background-color: var(--c-gray-400);"></div>
+                                            </div>
+                                            <div class="tag-label fs-label-sm">c-gray-400</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table-item">
+                                        <div class="tag">
+                                            <div class="tag-label fs-label-sm">color: var(--c-text-secondary)</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .main-wrap {
+        max-width: 100%;
+        flex-grow: 1;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .page-header {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--s-global-padding);
+        border-bottom: var(--c-border-primary) 1px solid;
+    }
+
+    .wrap {
+        width: 100%;
+        padding: 0 var(--s-global-padding);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        border-bottom: var(--c-border-primary) 1px solid;
+    }
+
+    .nav-link {
+        background-color: var(--c-fill-primary);
+        color: var(--c-text-alt-primary);
+        padding: 0.33rem 0.75rem;
+        border-radius: var(--b-radius-md);
+    }
+
+    .nav-link:hover {
+        background: var(--c-fill-secondary);
+    }
+
+    .table-wrap {
+        display: flex;
+        justify-content: center;
+        padding: var(--s-global-padding);
+        border: var(--c-border-primary) 1px solid;
+        background-color: var(--c-surface-primary);
+        border-radius: var(--b-radius-lg);
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--c-border-secondary) transparent;
+        margin-bottom: 4rem;
+    }
+
+    .table-wrap::-webkit-scrollbar {
+        height: 8px;
+        background: #f0f0f0;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    table {
+        flex-grow: 1;
+        background-color: var(--c-surface-primary);
+        border-collapse: collapse;
+        border-radius: var(--b-radius-lg);
+        outline: var(--c-border-primary) 1px solid;
+        outline-offset: -1px;
+        overflow: hidden;
+    }
+
+    tr {
+        padding: 1rem;
+    }
+
+    th {
+        text-align: left;
+        text-transform: uppercase;
+        padding: 1.125rem 1.5rem 1rem;
+        background-color: var(--c-surface-primary);
+        font-weight: inherit;
+    }
+
+    td {
+        background-color: var(--c-surface-primary);
+        border: var(--c-border-primary) 1px solid;
+    }
+
+    .table-item {
+        display: flex;
+        padding: 0.5rem;
+    }
+
+    .tag {
+        display: flex;
+        padding: 0.5rem 0.5rem;
+        background-color: var(--c-surface-secondary);
+        border: var(--c-border-secondary) 1px solid;
+        border-radius: var(--b-radius-lg);
+        cursor: pointer;
+        gap: 0.75rem;
+    }
+
+    .tag-icon {
+        width: 22px;
+        height: 22px;
+        border: var(--c-border-secondary) 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--b-radius-md);
+        margin-right: -0.25rem;
+    }
+
+    .tag-color-swatch {
+        width: 12px;
+        height: 12px;
+        border-radius: var(--b-radius-xs);
+    }
+
+    .tag-label {
+        padding: 0 0.25rem;
+    }
+
+    /* TABLET - Responsive Styles */
+    @media (max-width: 768px) {
+        .table-wrap {
+            display: block;
+            white-space: nowrap;
+        }
+
+        table {
+            width: auto; /* Ensure the table doesn't shrink */
+        }
+    }
+
+    /* MOBILE - Responsive Styles */
+    @media (max-width: 425px) {
+        .wrap {
+        }
+    }
+</style>

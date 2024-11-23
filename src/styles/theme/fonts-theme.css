@@ -1,0 +1,114 @@
+/* FONT STYLES */
+
+:root {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+
+    /* Font Values */
+    --font-scale: 1.333;
+    --font-base: 16px;
+
+    /* Font Scale */
+    --fs-h1: calc(var(--font-base) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale));
+    --fs-h2: calc(var(--font-base) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale));
+    --fs-h3: calc(var(--font-base) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale));
+    --fs-h4: calc(var(--font-base) * var(--font-scale) * var(--font-scale) * var(--font-scale));
+    --fs-h5: calc(var(--font-base) * var(--font-scale) * var(--font-scale));
+    --fs-h6: calc(var(--font-base) * var(--font-scale));
+    --fs-p: var(--font-base);
+
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-scale: 1.25;
+    }  
+}
+
+@media (max-width: 425px) {
+    :root {
+        --font-scale: 1.15;
+    }
+}
+
+h1, .fs-h1 {
+    font-size: var(--fs-h1);
+    font-weight: bold;
+    line-height: 1.2em;
+    letter-spacing: -.02em;
+}
+
+h2, .fs-h2 {
+    font-size: var(--fs-h2);
+    font-weight: bold;
+    line-height: 1.2em;
+    letter-spacing: -.02em;
+}
+
+h3, .fs-h3 {
+    font-size: var(--fs-h3);
+    font-weight: bold;
+    line-height: 1.2em;
+    letter-spacing: -.02em;
+}
+
+h4, .fs-h4 {
+    font-size: var(--fs-h4);
+    font-weight: bold;
+    line-height: 1.2em;
+    letter-spacing: -.02em;
+}
+
+h5, .fs-h5 {
+    font-size: var(--fs-h5);
+    font-weight: bold;
+    line-height: 1.2em;
+    letter-spacing: -.02em;
+}
+
+h6, .fs-h6 {
+    font-size: var(--fs-h6);
+    font-weight: bold;
+    line-height: 1.2em;
+    letter-spacing: -.01em;
+}
+
+.fs-p-lg {
+    font-size: calc(var(--font-base) * 1.125);
+    font-weight: 500;
+}
+
+.fs-p-md {
+    font-size: var(--font-base);
+    font-weight: 500;
+}
+
+.fs-p-sm {
+    font-size: calc(var(--font-base) * 0.875);
+    font-weight: 500;
+}
+
+.fs-label-lg {
+    font-size: calc(var(--font-base) * 1.125);
+    font-weight: 500;
+}
+
+p, .fs-label-md {
+    font-size: var(--font-base);
+    font-weight: 500;
+}
+
+.fs-label-sm {
+    font-size: calc(var(--font-base) * 0.875);
+    font-weight: 500;
+}
+
+.fs-label-xs {
+    font-size: calc(var(--font-base) * 0.75);
+    font-weight: 500;
+}
+
+.fs-label-xxs {
+    font-size: calc(var(--font-base) * 0.5625);
+    text-transform: uppercase;
+    font-weight: 500;
+}

@@ -1,0 +1,33 @@
+/* BUTTONS */
+
+.button {
+    border: 0;
+    border-radius: var(--b-radius-md);
+    background: var(--c-fill-primary);
+    color: var(--c-text-alt-primary);
+    font-size: 1rem;
+    padding: .5rem .75rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--c-fill-secondary);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+
+.button a {
+    color: var(--c-text-alt-primary);
+}
+
+
+
+
+  
+  
+

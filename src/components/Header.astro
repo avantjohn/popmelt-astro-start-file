@@ -1,25 +1,44 @@
 ---
 import Logo from '../components/Logo.astro';
+import ThemeButton from './ThemeButton.astro';
 
 const navItems = [
-    { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' }
+    { linkText: 'Collection', href: '/' },
+    { linkText: 'Templates', href: '/' },
+    { linkText: 'Sandbox', href: '/sandbox' },
+    { linkText: 'Resources', href: '/resources' }
 ];
 ---
 
-<nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
-    <a href="/">
+<script>
+    import { animate, scroll } from 'motion';
+    animate('.nav-wrap', { y: ['-100%', 0] }, { duration: 0.75 });
+
+    // Add mobile menu toggle functionality
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn?.addEventListener('click', () => {
+        navLinks?.classList.toggle('active');
+        menuBtn?.classList.toggle('active');
+    });
+</script>
+
+<nav class="nav-wrap">
+    <a href="/" class="logo-link">
         <Logo />
     </a>
+
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+    </button>
+
     {
         !!navItems?.length && (
-            <ul class="flex flex-wrap gap-x-4 gap-y-1">
+            <ul class="nav-links">
                 {navItems.map((item) => (
                     <li>
-                        <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2">
+                        <a href={item.href} class="nav-link">
                             {item.linkText}
                         </a>
                     </li>
@@ -27,4 +46,157 @@ const navItems = [
             </ul>
         )
     }
+    <div class="nav-icon">
+        <ThemeButton />
+    </div>
 </nav>
+
+<style>
+    .nav-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        border-bottom: var(--c-border-primary) 1px solid;
+        background-color: var(--c-bg-primary);
+    }
+
+    .nav-links {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-link {
+        display: flex;
+        padding: 1rem;
+    }
+
+    .nav-icon {
+        width: 40px;
+        height: 40px;
+        border: var(--c-border-primary) 1px solid;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Mobile Nav Menu */
+
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        height: 40px;
+    }
+
+    .hamburger {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--c-surface-primary);
+        position: relative;
+        transition: all 0.3s;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        background: var(--c-text-primary);
+        transition: all 0.3s;
+    }
+
+    .hamburger::before {
+        top: -6px;
+    }
+    .hamburger::after {
+        bottom: -6px;
+    }
+
+    .mobile-menu-btn.active .hamburger {
+        background: transparent;
+    }
+
+    .mobile-menu-btn.active .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .mobile-menu-btn.active .hamburger::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .nav-wrap {
+            padding: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            order: 1;
+            left: 0;
+            margin-right: auto;
+        }
+
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            background: var(--c-text-primary);
+            z-index: 10;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100svh;
+            box-sizing: border-box;
+            flex-direction: column;
+            background: var(--c-bg-primary);
+            padding: 1rem;
+            border-bottom: var(--c-border-primary) 1px solid;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .nav-icon {
+            order: 3;
+            margin-left: auto;
+            z-index: 10;
+        }
+
+        .logo-link {
+            order: 2;
+            z-index: 10;
+            padding-top: 4px;
+        }
+
+        .nav-link {
+            font-size: var(--fs-h3);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+</style>
