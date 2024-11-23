@@ -2,8 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 
 const navItems = [
-    { linkText: 'Fonts', href: '/resources' },
-    { linkText: 'Colors', href: '/resources/colors' }
+    { linkText: 'Fonts', href: '/docs/fonts' },
+    { linkText: 'Colors', href: '/docs/colors' }
 ];
 
 const placeholder = `
@@ -12,22 +12,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 ---
 
 <script>
-    import { gsap } from 'gsap';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from('.fade', { opacity: 0, duration: 1, delay: 0.5, ease: 'power1.out' });
+    import { animate, scroll } from 'motion';
+    animate('.fade', { opacity: [0, 1] }, { duration: 2 });
 </script>
 
-<Layout title="Colors - Theme">
-    <div class="main-wrap">
+<Layout title="Page Name">
+    <div class="main-wrap fade">
         <section>
-            <div class="page-header">
-                <h1 class="page-header-title">colors</h1>
+            <div class="wrap page-header">
+                <h1>colors</h1>
             </div>
         </section>
         <section>
-            <div class="wrap">
+            <div>
                 {
                     !!navItems?.length && (
                         <ul class="nav-links">
@@ -143,6 +140,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 </Layout>
 
 <style>
+    /* Page Layout Styles */
+
+    .fade {
+        opacity: 0;
+    }
+
     .main-wrap {
         max-width: 100%;
         flex-grow: 1;
@@ -154,25 +157,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        margin-bottom: 0;
-    }
-
-    .page-header {
-        width: 100%;
-        max-width: 100%;
-        padding: var(--s-global-padding);
-        border-bottom: var(--c-border-primary) 1px solid;
     }
 
     .wrap {
-        width: 100%;
-        padding: 0 var(--s-global-padding);
+        padding: var(--s-global-padding);
+    }
+
+    /* Header Styles */
+
+    .page-header {
+        border-bottom: var(--c-border-primary) 1px solid;
     }
 
     .nav-links {
         display: flex;
         gap: 1rem;
-        padding: 2rem 0;
+        padding: 2rem var(--s-global-padding);
         margin-bottom: 2rem;
         border-bottom: var(--c-border-primary) 1px solid;
     }
@@ -187,6 +187,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
     .nav-link:hover {
         background: var(--c-fill-secondary);
     }
+
+    /* Table Styles */
 
     .table-wrap {
         display: flex;

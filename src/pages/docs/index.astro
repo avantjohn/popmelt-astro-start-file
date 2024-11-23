@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const navItems = [
+    { linkText: 'Fonts', href: '/docs/fonts' },
+    { linkText: 'Colors', href: '/docs/colors' }
+];
+
+const placeholder = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis velit. Nulla tincidunt fermentum enim ut semper. Curabitur efficitur augue nec metus porta cursus. Maecenas eleifend id purus condimentum euismod. Morbi pulvinar, lectus vitae vulputate laoreet, orci ante egestas mi, ut faucibus nisl enim nec diam.
+`;
+---
+
+<script>
+    import { animate, scroll } from 'motion';
+    animate('.fade', { opacity: [0, 1] }, { duration: 2 });
+</script>
+
+<Layout title="Page Name">
+    <div class="main-wrap fade">
+        <section>
+            <div class="wrap page-header">
+                <h1>docs</h1>
+            </div>
+        </section>
+        <section>
+            <div>
+                {
+                    !!navItems?.length && (
+                        <ul class="nav-links">
+                            {navItems.map((item) => (
+                                <li>
+                                    <a href={item.href} class="nav-link fs-p-sm">
+                                        {item.linkText}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    )
+                }
+            </div>
+        </section>
+        <section>
+            <div class="wrap"></div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    /* Page Layout Styles */
+
+    .fade {
+        opacity: 0;
+    }
+
+    .main-wrap {
+        max-width: 100%;
+        flex-grow: 1;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wrap {
+        padding: var(--s-global-padding);
+    }
+
+    /* Header Styles */
+
+    .page-header {
+        border-bottom: var(--c-border-primary) 1px solid;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        padding: 2rem var(--s-global-padding);
+        margin-bottom: 2rem;
+        border-bottom: var(--c-border-primary) 1px solid;
+    }
+
+    .nav-link {
+        background-color: var(--c-fill-primary);
+        color: var(--c-text-alt-primary);
+        padding: 0.33rem 0.75rem;
+        border-radius: var(--b-radius-md);
+    }
+
+    .nav-link:hover {
+        background: var(--c-fill-secondary);
+    }
+
+    /* TABLET - Responsive Styles */
+    @media (max-width: 768px) {
+        .div {
+        }
+    }
+
+    /* MOBILE - Responsive Styles */
+    @media (max-width: 425px) {
+        .div {
+        }
+    }
+</style>
