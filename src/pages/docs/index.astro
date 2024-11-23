@@ -13,7 +13,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 
 <script>
     import { animate, scroll } from 'motion';
-    animate('.fade', { opacity: [0, 1] }, { duration: 2 });
+    animate('.fade', { opacity: [0, 1] }, { duration: 1 });
 </script>
 
 <Layout title="Page Name">
@@ -24,24 +24,35 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
             </div>
         </section>
         <section>
-            <div>
-                {
-                    !!navItems?.length && (
-                        <ul class="nav-links">
-                            {navItems.map((item) => (
-                                <li>
-                                    <a href={item.href} class="nav-link fs-p-sm">
-                                        {item.linkText}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    )
-                }
+            <div class="wrap">
+                <div class="section-header">
+                    <h2>start building</h2>
+                    <div class="card-list">
+                        <a href="/docs/fonts" class="card">
+                            <div class="card-image"></div>
+                            <div class="card-text-wrap">
+                                <div class="card-title">
+                                    <h4><span>↳</span> Fonts</h4>
+                                </div>
+                                <div class="card-desc">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/docs/colors" class="card">
+                            <div class="card-image"></div>
+                            <div class="card-text-wrap">
+                                <div class="card-title">
+                                    <h4><span>↳</span> Colors</h4>
+                                </div>
+                                <div class="card-desc">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section>
-            <div class="wrap"></div>
         </section>
     </div>
 </Layout>
@@ -70,7 +81,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
         padding: var(--s-global-padding);
     }
 
-    /* Header Styles */
+    /* Page Header */
 
     .page-header {
         border-bottom: var(--c-border-primary) 1px solid;
@@ -95,9 +106,72 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
         background: var(--c-fill-secondary);
     }
 
+    /* Section Header */
+    .section-header {
+        display: flex;
+        gap: calc(var(--s-global-padding) * 2);
+        max-width: 100%;
+        flex-grow: 1;
+        flex-direction: row;
+    }
+
+    /* Card Styles */
+
+    .card-list {
+        display: flex;
+        gap: var(--s-global-padding);
+        max-width: 100%;
+        flex-grow: 1;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 1.25rem;
+    }
+
+    .card-image {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: var(--c-fill-primary);
+        border: var(--c-border-primary) 1px solid;
+        border-radius: var(--b-radius-lg);
+    }
+
+    .card-text-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .card-title {
+        display: flex;
+    }
+
+    h4 span {
+        font-weight: 400;
+        color: var(--c-text-secondary);
+        margin-right: 0.25rem;
+    }
+
+    .card-desc {
+        display: flex;
+        color: var(--c-text-secondary);
+    }
+
+    /* LAPTOP SMALL - Responsive Styles */
+    @media (max-width: 1024px) {
+        .section-header {
+            flex-direction: column;
+            gap: calc(var(--s-global-padding));
+        }
+    }
+
     /* TABLET - Responsive Styles */
     @media (max-width: 768px) {
-        .div {
+        .card-list {
+            flex-direction: column;
         }
     }
 
