@@ -9,7 +9,8 @@ A modern starter based on Astro.js and [Netlify Core Primitives](https://docs.ne
 | Name                | Documentation |
 | :------------------ | :------------ |
 | `Astro`             |               |
-| `Netlify Hosting`   |               |
+| `Astro Icon`        |               |
 | `motion.dev`        |               |
-| `Custom CSS`        |               |
 | `Locomotive Scroll` |               |
+| `Native CSS`        |               |
+| `Netlify Hosting`   |               |

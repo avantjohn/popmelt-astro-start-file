@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 const placeholder = `World`;
 ---
 
@@ -51,6 +52,12 @@ const placeholder = `World`;
 
     .hero {
         height: 50vh;
+    }
+
+    /* LAPTOP SMALL - Responsive Styles */
+    @media (max-width: 1024px) {
+        .div {
+        }
     }
 
     /* TABLET - Responsive Styles */

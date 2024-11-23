@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 
 const navItems = [
     { linkText: 'Fonts', href: '/docs/fonts' },
@@ -16,7 +17,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
     animate('.fade', { opacity: [0, 1] }, { duration: 1 });
 </script>
 
-<Layout title="Page Name">
+<Layout title="Docs">
     <div class="main-wrap fade">
         <section>
             <div class="wrap page-header">
@@ -32,7 +33,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                             <div class="card-image"></div>
                             <div class="card-text-wrap">
                                 <div class="card-title">
-                                    <h4><span>↳</span> Fonts</h4>
+                                    <div class="card-title-icon">
+                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
+                                    </div>
+                                    <h4>fonts</h4>
                                 </div>
                                 <div class="card-desc">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
@@ -43,7 +47,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                             <div class="card-image"></div>
                             <div class="card-text-wrap">
                                 <div class="card-title">
-                                    <h4><span>↳</span> Colors</h4>
+                                    <div class="card-title-icon">
+                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
+                                    </div>
+                                    <h4>colors</h4>
                                 </div>
                                 <div class="card-desc">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
@@ -149,10 +156,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
         display: flex;
     }
 
-    h4 span {
-        font-weight: 400;
-        color: var(--c-text-secondary);
-        margin-right: 0.25rem;
+    .card-title-icon {
+        display: flex;
+        align-items: center;
+        margin-right: 0.75rem;
     }
 
     .card-desc {

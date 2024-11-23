@@ -5,6 +5,10 @@
     color: var(--c-text-primary);
 }
 
+[data-icon] {
+    color: var(--c-icon-primary)
+}
+
 /* Theme Light Palette */
 
 :root {
