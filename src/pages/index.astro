@@ -17,8 +17,8 @@ const placeholder = `World`;
             <Hero />
         </section>
         <section>
-            <div class="wrap">
-                <h2>Section</h2>
+            <div class="wrap banner-docs">
+                <h2>theme <a href="/docs">docs</a></h2>
             </div>
         </section>
     </div>
@@ -52,6 +52,15 @@ const placeholder = `World`;
 
     .hero {
         height: 50vh;
+    }
+
+    .banner-docs {
+        border-top: var(--c-border-primary) 1px solid;
+    }
+
+    a {
+        color: var(--c-brand-primary);
+        text-decoration: underline;
     }
 
     /* LAPTOP SMALL - Responsive Styles */

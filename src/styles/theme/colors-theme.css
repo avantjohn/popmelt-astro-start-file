@@ -6,7 +6,7 @@
 }
 
 [data-icon] {
-    color: var(--c-icon-primary)
+    color: var(--c-ic)
 }
 
 /* Theme Light Palette */
@@ -25,7 +25,7 @@
     --c-border-secondary: var(--c-gray-100);
     --c-icon-primary: var(--c-gray-500);
     --c-icon-secondary: var(--c-gray-50);
-    --c-brand-primary: var(--c-violet-700);
+    --c-brand-primary: var(--c-violet-600);
 }
 
 /* Theme Dark Palette */
