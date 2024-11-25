@@ -26,8 +26,47 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
         </section>
         <section>
             <div class="wrap">
-                <div class="section-header">
-                    <h2>theme variables</h2>
+                <div class="features-section">
+                    <div class="features-title">
+                        <h3>quick resources</h3>
+                    </div>
+                    <div class="card-list">
+                        <a href="/docs" class="card">
+                            <div class="card-image"></div>
+                            <div class="card-text-wrap">
+                                <div class="card-title">
+                                    <div class="card-title-icon">
+                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
+                                    </div>
+                                    <h4>cheatsheet</h4>
+                                </div>
+                                <div class="card-desc">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/docs" class="card">
+                            <div class="card-image"></div>
+                            <div class="card-text-wrap">
+                                <div class="card-title">
+                                    <div class="card-title-icon">
+                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
+                                    </div>
+                                    <h4>sandbox</h4>
+                                </div>
+                                <div class="card-desc">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="features-section">
+                    <div class="features-title">
+                        <h3>theme variables</h3>
+                    </div>
                     <div class="card-list">
                         <a href="/docs/fonts" class="card">
                             <div class="card-image"></div>
@@ -141,8 +180,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
         background: var(--c-fill-secondary);
     }
 
-    /* Section Header */
-    .section-header {
+    /* Feature Section */
+    .features-section {
         display: flex;
         gap: calc(var(--p-xl) * 2);
         max-width: 100%;
@@ -150,20 +189,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
         flex-direction: row;
     }
 
+    .features-title {
+        display: flex;
+        max-width: 20%;
+    }
+
     /* Card Styles */
 
     .card-list {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
         gap: var(--p-md);
-        max-width: 100%;
-        flex-grow: 1;
-        flex-wrap: wrap;
+        width: 100%;
     }
 
     .card {
         display: flex;
         flex-direction: column;
-        flex: 1 1 calc(50% - var(--p-md));
         gap: 1.25rem;
     }
 
@@ -198,31 +240,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 
     /* LAPTOP SMALL - Responsive Styles */
     @media (max-width: 1024px) {
-        .section-header {
+        .features-section {
             flex-direction: column;
             gap: var(--p-xl);
         }
-        .card-list {
-            row-gap: var(--p-lg);
+        .features-title {
+            max-width: 100%;
         }
     }
 
     /* TABLET - Responsive Styles */
     @media (max-width: 768px) {
         .card-list {
-            flex-direction: row;
+            grid-template-columns: 1fr;
             gap: var(--p-xl);
-        }
-        .card {
-            flex: 1 100%;
         }
     }
 
     /* MOBILE - Responsive Styles */
     @media (max-width: 425px) {
         .card-list {
-            flex-direction: column;
-            row-gap: calc(var(--p-xl) * 2);
+            gap: calc(var(--p-xl) * 2);
         }
     }
 </style>
