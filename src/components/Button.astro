@@ -13,7 +13,7 @@ import { Icon } from 'astro-icon/components';
                     background: ['var(--c-fill-primary)', 'var(--c-fill-secondary)'],
                     scale: [1, 0.97]
                 },
-                { duration: 0.5 }
+                { duration: 0.33 }
             );
             animate(
                 '.button-icon',
@@ -31,7 +31,7 @@ import { Icon } from 'astro-icon/components';
                     background: ['var(--c-fill-secondary)', 'var(--c-fill-primary)'],
                     scale: [0.97, 1]
                 },
-                { duration: 0.5 }
+                { duration: 0.33 }
             );
             animate(
                 '.button-icon',
@@ -62,10 +62,15 @@ import { Icon } from 'astro-icon/components';
         border-radius: var(--b-radius-xl);
     }
 
+    .button-label {
+        padding-top: 1px;
+    }
+
     .button-icon {
         width: 2rem;
         height: 2rem;
         padding-top: 1px;
+        padding-right: 0.5px;
         display: flex;
         align-items: center;
         justify-content: center;
