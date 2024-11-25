@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 import Hero from '../components/Hero.astro';
 
-const placeholder = `World`;
+const pageTitle = `Popmelt Astro Minimal`;
 ---
 
 <script>
@@ -11,7 +11,7 @@ const placeholder = `World`;
     animate('.fade', { opacity: [0, 1] }, { duration: 2 });
 </script>
 
-<Layout title="Page Name">
+<Layout title={pageTitle}>
     <div class="main-wrap fade">
         <section>
             <Hero />
