@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/docs/PageHeader.astro';
+import TagColor from '../../components/docs/TagColor.astro';
 
 const navItems = [
     { linkText: 'global colors', href: '/docs/colors' },
@@ -55,79 +56,109 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                             <tr>
                                 <td>
                                     <div class="table-item">
-                                        <div class="tag">
-                                            <div class="tag-icon">
-                                                <div class="tag-color-swatch" style="background-color: var(--c-text-primary);"></div>
+                                        <TagColor varName="--c-text-primary" />
+                                    </div>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--c-gray-800" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--c-gray-100" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <div class="tag">
+                                                <div class="tag-label fs-label-sm">color: var(--c-text-primary)</div>
                                             </div>
-                                            <div class="tag-label fs-label-sm">c-text-primary</div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="table-item">
-                                        <div class="tag">
-                                            <div class="tag-icon">
-                                                <div class="tag-color-swatch" style="background-color: var(--c-gray-800);"></div>
-                                            </div>
-                                            <div class="tag-label fs-label-sm">c-gray-800</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="table-item">
-                                        <div class="tag">
-                                            <div class="tag-icon">
-                                                <div class="tag-color-swatch" style="background-color: var(--c-gray-100);"></div>
-                                            </div>
-                                            <div class="tag-label fs-label-sm">c-gray-100</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="table-item">
-                                        <div class="tag">
-                                            <div class="tag-label fs-label-sm">color: var(--c-text-primary)</div>
-                                        </div>
-                                    </div>
+                                    </td>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="table-item">
-                                        <div class="tag">
-                                            <div class="tag-icon">
-                                                <div class="tag-color-swatch" style="background-color: var(--c-text-secondary);"></div>
-                                            </div>
-                                            <div class="tag-label fs-label-sm">c-text-secondary</div>
-                                        </div>
+                                        <TagColor varName="--c-text-secondary" />
                                     </div>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--c-gray-500" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--c-gray-400" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <div class="tag">
+                                                <div class="tag-label fs-label-sm">color: var(--c-text-secondary)</div>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </td>
+                            </tr>
+                            <tr>
                                 <td>
                                     <div class="table-item">
-                                        <div class="tag">
-                                            <div class="tag-icon">
-                                                <div class="tag-color-swatch" style="background-color: var(--c-gray-500);"></div>
-                                            </div>
-                                            <div class="tag-label fs-label-sm">c-gray-500</div>
-                                        </div>
+                                        <TagColor varName="--c-text-alt-primary" />
                                     </div>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--c-gray-100" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--c-gray-100" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <div class="tag">
+                                                <div class="tag-label fs-label-sm">color: var(--c-text-alt-primary)</div>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr class="fs-label-xs">
+                                <th>Background</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
                                 <td>
                                     <div class="table-item">
-                                        <div class="tag">
-                                            <div class="tag-icon">
-                                                <div class="tag-color-swatch" style="background-color: var(--c-gray-400);"></div>
+                                        <TagColor varName="--c-bg-primary" />
+                                    </div>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--c-gray-50" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--c-black-900" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <div class="tag">
+                                                <div class="tag-label fs-label-sm">color: var(--c-text-primary)</div>
                                             </div>
-                                            <div class="tag-label fs-label-sm">c-gray-400</div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="table-item">
-                                        <div class="tag">
-                                            <div class="tag-label fs-label-sm">color: var(--c-text-secondary)</div>
-                                        </div>
-                                    </div>
+                                    </td>
                                 </td>
                             </tr>
                         </tbody>
@@ -136,164 +167,168 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
             </div>
         </section>
     </div>
-</Layout>
 
-<style>
-    /* Page Layout Styles */
+    <style>
+        /* Page Layout Styles */
 
-    .fade {
-        opacity: 0;
-    }
+        .fade {
+            opacity: 0;
+        }
 
-    .main-wrap {
-        max-width: 100%;
-        flex-grow: 1;
-    }
+        .main-wrap {
+            max-width: 100%;
+            flex-grow: 1;
+        }
 
-    section {
-        width: 100%;
-        max-width: 100%;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
+        section {
+            width: 100%;
+            max-width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .wrap {
-        padding: var(--p-xl);
-    }
+        .wrap {
+            padding: var(--p-xl);
+        }
 
-    /* Header Styles */
+        /* Header Styles */
 
-    .page-header {
-        border-bottom: var(--c-border-primary) 1px solid;
-    }
+        .page-header {
+            border-bottom: var(--c-border-primary) 1px solid;
+        }
 
-    .nav-links {
-        display: flex;
-        gap: 1rem;
-        padding: 2rem var(--p-xl);
-        margin-bottom: 2rem;
-        border-bottom: var(--c-border-primary) 1px solid;
-    }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            padding: 2rem var(--p-xl);
+            margin-bottom: 2rem;
+            border-bottom: var(--c-border-primary) 1px solid;
+        }
 
-    .nav-link {
-        background-color: var(--c-fill-primary);
-        color: var(--c-text-alt-primary);
-        padding: 0.33rem 0.75rem;
-        border-radius: var(--b-radius-md);
-    }
+        .nav-link {
+            background-color: var(--c-fill-primary);
+            color: var(--c-text-alt-primary);
+            padding: 0.33rem 0.75rem;
+            border-radius: var(--b-radius-md);
+        }
 
-    .nav-link:hover {
-        background: var(--c-fill-secondary);
-    }
+        .nav-link:hover {
+            background: var(--c-fill-secondary);
+        }
 
-    /* Table Styles */
+        /* Table Styles */
 
-    .table-wrap {
-        display: flex;
-        justify-content: center;
-        padding: var(--p-xl);
-        border: var(--c-border-primary) 1px solid;
-        background-color: var(--c-surface-primary);
-        border-radius: var(--b-radius-lg);
-        overflow-x: auto;
-        scrollbar-width: thin;
-        scrollbar-color: var(--c-border-secondary) transparent;
-        margin-bottom: 4rem;
-    }
-
-    .table-wrap::-webkit-scrollbar {
-        height: 8px;
-        background: #f0f0f0;
-    }
-
-    .table-wrap::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-
-    .table-wrap::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-
-    table {
-        flex-grow: 1;
-        background-color: var(--c-surface-primary);
-        border-collapse: collapse;
-        border-radius: var(--b-radius-lg);
-        outline: var(--c-border-primary) 1px solid;
-        outline-offset: -1px;
-        overflow: hidden;
-    }
-
-    tr {
-        padding: 1rem;
-    }
-
-    th {
-        text-align: left;
-        text-transform: uppercase;
-        padding: 1.125rem 1.5rem 1rem;
-        background-color: var(--c-surface-primary);
-        font-weight: inherit;
-    }
-
-    td {
-        background-color: var(--c-surface-primary);
-        border: var(--c-border-primary) 1px solid;
-    }
-
-    .table-item {
-        display: flex;
-        padding: 0.5rem;
-    }
-
-    .tag {
-        display: flex;
-        padding: 0.5rem 0.5rem;
-        background-color: var(--c-surface-secondary);
-        border: var(--c-border-secondary) 1px solid;
-        border-radius: var(--b-radius-lg);
-        cursor: pointer;
-        gap: 0.75rem;
-    }
-
-    .tag-icon {
-        width: 22px;
-        height: 22px;
-        border: var(--c-border-secondary) 1px solid;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: var(--b-radius-md);
-        margin-right: -0.25rem;
-    }
-
-    .tag-color-swatch {
-        width: 12px;
-        height: 12px;
-        border-radius: var(--b-radius-xs);
-    }
-
-    .tag-label {
-        padding: 0 0.25rem;
-    }
-
-    /* TABLET - Responsive Styles */
-    @media (max-width: 768px) {
         .table-wrap {
-            display: block;
-            white-space: nowrap;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: var(--p-lg);
+            padding: var(--p-xl);
+            border: var(--c-border-primary) 1px solid;
+            background-color: var(--c-surface-primary);
+            border-radius: var(--b-radius-lg);
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--c-border-secondary) transparent;
+            margin-bottom: 4rem;
+        }
+
+        .table-wrap::-webkit-scrollbar {
+            height: 8px;
+            background: #f0f0f0;
+        }
+
+        .table-wrap::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .table-wrap::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
 
         table {
-            width: auto; /* Ensure the table doesn't shrink */
+            flex-grow: 1;
+            background-color: var(--c-surface-primary);
+            border-collapse: collapse;
+            border-radius: var(--b-radius-lg);
+            outline: var(--c-border-primary) 1px solid;
+            outline-offset: -1px;
+            overflow: hidden;
+            table-layout: fixed;
         }
-    }
 
-    /* MOBILE - Responsive Styles */
-    @media (max-width: 425px) {
-        .wrap {
+        tr {
+            padding: 1rem;
         }
-    }
-</style>
+
+        th {
+            text-align: left;
+            text-transform: uppercase;
+            padding: 1.125rem 1.5rem 1rem;
+            background-color: var(--c-surface-primary);
+            font-weight: inherit;
+        }
+
+        td {
+            background-color: var(--c-surface-primary);
+            border: var(--c-border-primary) 1px solid;
+            width: 25%;
+        }
+
+        .table-item {
+            display: flex;
+            padding: 0.5rem;
+        }
+
+        .tag {
+            display: flex;
+            padding: 0.5rem 0.5rem;
+            background-color: var(--c-surface-secondary);
+            border: var(--c-border-secondary) 1px solid;
+            border-radius: var(--b-radius-lg);
+            cursor: pointer;
+            gap: 0.75rem;
+        }
+
+        .tag-icon {
+            width: 22px;
+            height: 22px;
+            border: var(--c-border-secondary) 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--b-radius-md);
+            margin-right: -0.25rem;
+        }
+
+        .tag-color-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: var(--b-radius-xs);
+        }
+
+        .tag-label {
+            padding: 0 0.25rem;
+        }
+
+        /* TABLET - Responsive Styles */
+        @media (max-width: 768px) {
+            .table-wrap {
+                white-space: nowrap;
+            }
+
+            table {
+                min-width: 100%; /* Ensure the table doesn't shrink */
+                margin-bottom: var(--p-lg);
+            }
+        }
+
+        /* MOBILE - Responsive Styles */
+        @media (max-width: 425px) {
+            .wrap {
+            }
+        }
+    </style>
+</Layout>
