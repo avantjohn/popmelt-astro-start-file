@@ -1,0 +1,88 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+    title?: string;
+    desc?: string;
+    href?: string;
+}
+
+const { title, desc, href } = Astro.props;
+---
+
+<script>
+    // import { animate, scroll } from 'motion';
+    // animate('.fade', { opacity: [0, 1] }, { duration: 2 });
+</script>
+
+<a href={href} class="card">
+    <div class="card-image"></div>
+    <div class="card-text-wrap">
+        <div class="card-title">
+            <div class="card-title-icon">
+                <Icon name="arrow/turn-down-right" class="fs-label-lg" />
+            </div>
+            <h4>{title}</h4>
+        </div>
+        <div class="card-desc">
+            <p>{desc}</p>
+        </div>
+    </div>
+</a>
+
+<style>
+    /* Card Styles */
+
+    .card-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+        gap: var(--p-md);
+        width: 100%;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .card-image {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: var(--c-fill-primary);
+        border: var(--c-border-primary) 1px solid;
+        border-radius: var(--b-radius-lg);
+    }
+
+    .card-text-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .card-title {
+        display: flex;
+    }
+
+    .card-title-icon {
+        display: flex;
+        align-items: center;
+        margin-right: 0.75rem;
+    }
+
+    .card-desc {
+        display: flex;
+        color: var(--c-text-secondary);
+    }
+    /* TABLET - Responsive Styles */
+    @media (max-width: 768px) {
+        .div {
+        }
+    }
+
+    /* MOBILE - Responsive Styles */
+    @media (max-width: 425px) {
+        .div {
+        }
+    }
+</style>

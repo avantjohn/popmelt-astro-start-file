@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 
 import PageHeader from '../../components/docs/PageHeader.astro';
+import Card from '../../components/docs/Card.astro';
 
 const navItems = [
     { linkText: 'Fonts', href: '/docs/fonts' },
@@ -31,34 +32,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                         <h3>quick resources</h3>
                     </div>
                     <div class="card-list">
-                        <a href="/docs" class="card">
-                            <div class="card-image"></div>
-                            <div class="card-text-wrap">
-                                <div class="card-title">
-                                    <div class="card-title-icon">
-                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
-                                    </div>
-                                    <h4>getting started</h4>
-                                </div>
-                                <div class="card-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/docs/sandbox" class="card">
-                            <div class="card-image"></div>
-                            <div class="card-text-wrap">
-                                <div class="card-title">
-                                    <div class="card-title-icon">
-                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
-                                    </div>
-                                    <h4>sandbox</h4>
-                                </div>
-                                <div class="card-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
-                                </div>
-                            </div>
-                        </a>
+                        <Card title="getting started" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs" />
+                        <Card title="sandbox" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/sandbox" />
                     </div>
                 </div>
             </div>
@@ -68,62 +43,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                         <h3>theme variables</h3>
                     </div>
                     <div class="card-list">
-                        <a href="/docs/fonts" class="card">
-                            <div class="card-image"></div>
-                            <div class="card-text-wrap">
-                                <div class="card-title">
-                                    <div class="card-title-icon">
-                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
-                                    </div>
-                                    <h4>fonts</h4>
-                                </div>
-                                <div class="card-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/docs/colors" class="card">
-                            <div class="card-image"></div>
-                            <div class="card-text-wrap">
-                                <div class="card-title">
-                                    <div class="card-title-icon">
-                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
-                                    </div>
-                                    <h4>colors</h4>
-                                </div>
-                                <div class="card-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/docs" class="card">
-                            <div class="card-image"></div>
-                            <div class="card-text-wrap">
-                                <div class="card-title">
-                                    <div class="card-title-icon">
-                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
-                                    </div>
-                                    <h4>padding</h4>
-                                </div>
-                                <div class="card-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/docs" class="card">
-                            <div class="card-image"></div>
-                            <div class="card-text-wrap">
-                                <div class="card-title">
-                                    <div class="card-title-icon">
-                                        <Icon name="arrow/turn-down-right" class="fs-label-lg" />
-                                    </div>
-                                    <h4>borders</h4>
-                                </div>
-                                <div class="card-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
-                                </div>
-                            </div>
-                        </a>
+                        <Card title="fonts" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/fonts" />
+                        <Card title="colors" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/colors" />
+                        <Card title="padding" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/padding" />
+                        <Card title="borders" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/borders" />
                     </div>
                 </div>
             </div>

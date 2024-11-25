@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
-const placeholder = `World`;
+const pageTitle = `World`;
 ---
 
 <script>
@@ -9,11 +9,11 @@ const placeholder = `World`;
     animate('.fade', { opacity: [0, 1] }, { duration: 1 });
 </script>
 
-<Layout title="Page Name">
+<Layout title={pageTitle}>
     <div class="main-wrap fade">
         <section>
             <div class="wrap hero">
-                <h1>Hello {placeholder}</h1>
+                <h1>Hello {pageTitle}</h1>
             </div>
         </section>
         <section>
