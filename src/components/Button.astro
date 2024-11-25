@@ -1,0 +1,75 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<script>
+    import { animate, scroll } from 'motion';
+
+    document.querySelectorAll('.button').forEach((button) => {
+        button.addEventListener('mouseenter', () => {
+            animate(
+                '.button',
+                {
+                    background: ['var(--c-fill-primary)', 'var(--c-fill-secondary)'],
+                    scale: [1, 0.97]
+                },
+                { duration: 0.5 }
+            );
+            animate(
+                '.button-icon',
+                {
+                    x: [0, '-.25rem'],
+                    border: ['1px solid oklch(from var(--c-text-alt-primary) l c h / 40%)', '1px solid oklch(from var(--c-text-alt-primary) l c h / 60%)']
+                },
+                { duration: 0.33 }
+            );
+        });
+        button.addEventListener('mouseleave', () => {
+            animate(
+                '.button',
+                {
+                    background: ['var(--c-fill-secondary)', 'var(--c-fill-primary)'],
+                    scale: [0.97, 1]
+                },
+                { duration: 0.5 }
+            );
+            animate(
+                '.button-icon',
+                {
+                    x: ['-.25rem', 0],
+                    border: ['1px solid oklch(from var(--c-text-alt-primary) l c h / 60%)', '1px solid oklch(from var(--c-text-alt-primary) l c h / 40%)']
+                },
+                { duration: 0.33 }
+            );
+        });
+    });
+</script>
+
+<div class="button">
+    <div class="button-label fs-label-sm">Learn More</div>
+    <div class="button-icon">
+        <Icon name="arrow/arrow-right" size=".825rem" />
+    </div>
+</div>
+
+<style>
+    .button {
+        display: flex;
+        padding: 0.5rem 0.5rem 0.5rem 1.125rem;
+        gap: 0.875rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--b-radius-xl);
+    }
+
+    .button-icon {
+        width: 2rem;
+        height: 2rem;
+        padding-top: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid oklch(from var(--c-text-alt-primary) l c h / 40%);
+        border-radius: var(--b-radius-lg);
+    }
+</style>
