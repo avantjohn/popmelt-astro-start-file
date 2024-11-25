@@ -73,16 +73,27 @@ const { title, desc, href } = Astro.props;
     .card-desc {
         display: flex;
         color: var(--c-text-secondary);
+        padding-left: var(--p-md);
     }
+
+    /* LAPTOP SMALL - Responsive Styles */
+    @media (max-width: 1024px) {
+        .card-desc {
+            padding-left: var(--p-lg);
+        }
+    }
+
     /* TABLET - Responsive Styles */
     @media (max-width: 768px) {
-        .div {
+        .card-desc {
+            padding-left: var(--p-xl);
         }
     }
 
     /* MOBILE - Responsive Styles */
     @media (max-width: 425px) {
-        .div {
+        .card-desc {
+            padding-left: 0;
         }
     }
 </style>

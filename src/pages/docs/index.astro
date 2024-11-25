@@ -10,8 +10,8 @@ const navItems = [
     { linkText: 'Colors', href: '/docs/colors' }
 ];
 
-const placeholder = `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis velit. Nulla tincidunt fermentum enim ut semper. Curabitur efficitur augue nec metus porta cursus. Maecenas eleifend id purus condimentum euismod. Morbi pulvinar, lectus vitae vulputate laoreet, orci ante egestas mi, ut faucibus nisl enim nec diam.
+const pageTitle = `
+docs
 `;
 ---
 
@@ -20,10 +20,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
     animate('.fade', { opacity: [0, 1] }, { duration: 1 });
 </script>
 
-<Layout title="Docs">
+<Layout title={pageTitle}>
     <div class="main-wrap fade">
         <section>
-            <PageHeader title="docs" />
+            <PageHeader title={pageTitle} />
         </section>
         <section>
             <div class="wrap">
@@ -32,8 +32,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                         <h3>quick resources</h3>
                     </div>
                     <div class="card-list">
-                        <Card title="getting started" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs" />
-                        <Card title="sandbox" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/sandbox" />
+                        <Card
+                            title="getting started"
+                            desc="Learn how to set up your project and get started with the basics of our documentation."
+                            href="/docs"
+                        />
+                        <Card title="sandbox" desc="Explore our interactive sandbox environment to test and play with components." href="/docs/sandbox" />
                     </div>
                 </div>
             </div>
@@ -43,10 +47,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                         <h3>theme variables</h3>
                     </div>
                     <div class="card-list">
-                        <Card title="fonts" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/fonts" />
-                        <Card title="colors" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/colors" />
-                        <Card title="padding" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/padding" />
-                        <Card title="borders" desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum." href="/docs/borders" />
+                        <Card title="fonts" desc="Discover the available fonts and how to implement them in your project." href="/docs/fonts" />
+                        <Card title="colors" desc="Understand the color palette and how to customize it for your design." href="/docs/colors" />
+                        <Card title="padding" desc="Learn about the padding options available and how to apply them effectively." href="/docs/padding" />
+                        <Card title="borders" desc="Explore the border styles and how to use them in your components." href="/docs/borders" />
                     </div>
                 </div>
             </div>
