@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 import PageHeader from '../../components/docs/PageHeader.astro';
+import Button from '../../components/Button.astro';
+
 const pageTitle = `start building`;
 ---
 
@@ -19,6 +21,9 @@ const pageTitle = `start building`;
             <div class="wrap desc-wrap">
                 <h4>This minimal template provides the essential styles & dependencies needed to build & publish a modern web interface.</h4>
                 <p>The intention is to influence your project as little as possible while reducing effort to start building immediately.</p>
+                <div class="button-wrap">
+                    <Button label="Component Sandbox" href="/docs/sandbox" />
+                </div>
             </div>
         </section>
     </div>
@@ -53,7 +58,13 @@ const pageTitle = `start building`;
     .desc-wrap {
         display: flex;
         flex-direction: column;
+        align-items: start;
+        justify-content: start;
         gap: var(--p-md);
+    }
+
+    .button-wrap {
+        width: auto;
     }
 
     /* LAPTOP SMALL - Responsive Styles */
