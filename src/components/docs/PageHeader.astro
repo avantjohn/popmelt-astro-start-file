@@ -1,6 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
 const placeholder = `World`;
+
+interface Props {
+    title?: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <script>
@@ -8,13 +14,19 @@ const placeholder = `World`;
     // animate('.fade', { opacity: [0, 1] }, { duration: 2 });
 </script>
 
-<div class="wrap">
-    <h1>Hello {placeholder}</h1>
+<div class="wrap page-header">
+    <h1>{title}</h1>
 </div>
 
 <style>
     .wrap {
         padding: var(--p-xl);
+    }
+
+    /* Page Header */
+
+    .page-header {
+        border-bottom: var(--c-border-primary) 1px solid;
     }
 
     /* TABLET - Responsive Styles */

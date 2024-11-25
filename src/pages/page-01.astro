@@ -1,8 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
-import Button from '../../components/Button.astro';
-import PageHeader from '../../components/docs/PageHeader.astro';
+const placeholder = `Page 01`;
 ---
 
 <script>
@@ -10,16 +9,16 @@ import PageHeader from '../../components/docs/PageHeader.astro';
     animate('.fade', { opacity: [0, 1] }, { duration: 1 });
 </script>
 
-<Layout title="Sandbox">
+<Layout title="Page Name">
     <div class="main-wrap fade">
         <section>
-            <PageHeader title="sandbox" />
+            <div class="wrap hero">
+                <h1>Hello {placeholder}</h1>
+            </div>
         </section>
         <section>
-            <div class="sandbox-wrap">
-                <a href="/docs/sandbox">
-                    <Button />
-                </a>
+            <div class="wrap">
+                <h2>Section</h2>
             </div>
         </section>
     </div>
@@ -52,15 +51,7 @@ import PageHeader from '../../components/docs/PageHeader.astro';
     /* Custom Styles */
 
     .hero {
-        border-bottom: var(--c-border-primary) 1px solid;
-    }
-
-    .sandbox-wrap {
-        width: 100%;
-        height: 66vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 50vh;
     }
 
     /* LAPTOP SMALL - Responsive Styles */

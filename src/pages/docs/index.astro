@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 
+import PageHeader from '../../components/docs/PageHeader.astro';
+
 const navItems = [
     { linkText: 'Fonts', href: '/docs/fonts' },
     { linkText: 'Colors', href: '/docs/colors' }
@@ -20,9 +22,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 <Layout title="Docs">
     <div class="main-wrap fade">
         <section>
-            <div class="wrap page-header">
-                <h1>docs</h1>
-            </div>
+            <PageHeader title="docs" />
         </section>
         <section>
             <div class="wrap">
@@ -38,7 +38,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                                     <div class="card-title-icon">
                                         <Icon name="arrow/turn-down-right" class="fs-label-lg" />
                                     </div>
-                                    <h4>cheatsheet</h4>
+                                    <h4>getting started</h4>
                                 </div>
                                 <div class="card-desc">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum.</p>
@@ -153,12 +153,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 
     .wrap {
         padding: var(--p-xl);
-    }
-
-    /* Page Header */
-
-    .page-header {
-        border-bottom: var(--c-border-primary) 1px solid;
     }
 
     .nav-links {

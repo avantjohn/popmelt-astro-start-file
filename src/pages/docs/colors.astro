@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/docs/PageHeader.astro';
 
 const navItems = [
     { linkText: 'global colors', href: '/docs/colors' },
@@ -19,9 +20,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 <Layout title="Page Name">
     <div class="main-wrap fade">
         <section>
-            <div class="wrap page-header">
-                <h1>colors</h1>
-            </div>
+            <PageHeader title="colors" />
         </section>
         <section>
             <div>
