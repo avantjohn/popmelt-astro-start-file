@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/docs/PageHeader.astro';
 
+const pageTitle = `fonts`;
+
 const navItems = [
     { linkText: 'font family', href: '/docs/fonts' },
     { linkText: 'font styles', href: '/docs/fonts' }
@@ -17,10 +19,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
     animate('.fade', { opacity: [0, 1] }, { duration: 1, ease: 'easeInOut' });
 </script>
 
-<Layout title="Page Name">
+<Layout title={pageTitle}>
     <div class="main-wrap fade">
         <section>
-            <PageHeader title="fonts" />
+            <PageHeader title={pageTitle} />
         </section>
         <section>
             <div>

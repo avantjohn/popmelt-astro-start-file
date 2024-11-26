@@ -8,9 +8,7 @@ const navItems = [
     { linkText: 'theme colors', href: '/docs/colors' }
 ];
 
-const placeholder = `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis velit. Nulla tincidunt fermentum enim ut semper. Curabitur efficitur augue nec metus porta cursus. Maecenas eleifend id purus condimentum euismod. Morbi pulvinar, lectus vitae vulputate laoreet, orci ante egestas mi, ut faucibus nisl enim nec diam.
-`;
+const pageTitle = `colors`;
 ---
 
 <script>
@@ -18,10 +16,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
     animate('.fade', { opacity: [0, 1] }, { duration: 1, ease: 'easeInOut' });
 </script>
 
-<Layout title="Page Name">
+<Layout title={pageTitle}>
     <div class="main-wrap fade">
         <section>
-            <PageHeader title="colors" />
+            <PageHeader title={pageTitle} />
         </section>
         <section>
             <div>
