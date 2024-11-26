@@ -1,7 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
-const pageTitle = `World`;
+import PageHeader from '../../components/docs/PageHeader.astro';
+const pageTitle = `borders`;
 ---
 
 <script>
@@ -12,9 +13,7 @@ const pageTitle = `World`;
 <Layout title={pageTitle}>
     <div class="main-wrap fade">
         <section>
-            <div class="wrap hero">
-                <h1>Hello {pageTitle}</h1>
-            </div>
+            <PageHeader title={pageTitle} />
         </section>
         <section>
             <div class="wrap">
@@ -49,10 +48,6 @@ const pageTitle = `World`;
     }
 
     /* Custom Styles */
-
-    .hero {
-        height: 50vh;
-    }
 
     /* LAPTOP SMALL - Responsive Styles */
     @media (max-width: 1024px) {
