@@ -14,6 +14,7 @@ const { label = 'Learn More', href, icon = 'arrow/arrow-right' } = Astro.props;
     import { animate, scroll } from 'motion';
 
     const buttons = document.querySelectorAll('.button');
+
     buttons.forEach((button) => {
         button.addEventListener('mouseenter', function () {
             animate(

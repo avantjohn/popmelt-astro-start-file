@@ -41,13 +41,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
             </div>
         </section>
         <section>
-            <div class="wrap">
+            <div class="table-section">
                 <div class="table-wrap">
                     <table>
                         <thead>
                             <tr class="fs-label-xs">
+                                <td class="column-header"> Variable </td>
+                                <td class="column-header"> Light </td>
+                                <td class="column-header"> Dark </td>
+                            </tr>
+                            <tr class="fs-label-sm">
                                 <th>Text</th>
-                                <th></th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -68,13 +72,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                                             <TagColor varName="--c-gray-100" />
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="table-item">
-                                            <div class="tag">
-                                                <div class="tag-label fs-label-sm">color: var(--c-text-primary)</div>
-                                            </div>
-                                        </div>
-                                    </td>
                                 </td>
                             </tr>
                             <tr>
@@ -90,13 +87,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                                     <td>
                                         <div class="table-item">
                                             <TagColor varName="--c-gray-400" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="table-item">
-                                            <div class="tag">
-                                                <div class="tag-label fs-label-sm">color: var(--c-text-secondary)</div>
-                                            </div>
                                         </div>
                                     </td>
                                 </td>
@@ -116,22 +106,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                                             <TagColor varName="--c-gray-100" />
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="table-item">
-                                            <div class="tag">
-                                                <div class="tag-label fs-label-sm">color: var(--c-text-alt-primary)</div>
-                                            </div>
-                                        </div>
-                                    </td>
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
-                    <table>
                         <thead>
-                            <tr class="fs-label-xs">
+                            <tr class="fs-label-sm">
                                 <th>Background</th>
-                                <th></th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -150,13 +130,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
                                     <td>
                                         <div class="table-item">
                                             <TagColor varName="--c-black-900" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="table-item">
-                                            <div class="tag">
-                                                <div class="tag-label fs-label-sm">color: var(--c-text-primary)</div>
-                                            </div>
                                         </div>
                                     </td>
                                 </td>
@@ -188,8 +161,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
             flex-direction: column;
         }
 
-        .wrap {
-            padding: var(--p-xl);
+        .table-section {
+            padding: var(--p-md) var(--p-xl);
         }
 
         /* Header Styles */
@@ -232,6 +205,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
             scrollbar-width: thin;
             scrollbar-color: var(--c-border-secondary) transparent;
             margin-bottom: 4rem;
+            white-space: nowrap;
         }
 
         .table-wrap::-webkit-scrollbar {
@@ -265,10 +239,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 
         th {
             text-align: left;
-            text-transform: uppercase;
             padding: 1.125rem 1.5rem 1rem;
             background-color: var(--c-surface-primary);
             font-weight: inherit;
+            color: var(--c-text-secondary);
         }
 
         td {
@@ -280,6 +254,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
         .table-item {
             display: flex;
             padding: 0.5rem;
+        }
+
+        .column-header {
+            padding: 1.125rem 1.5rem 1rem;
+            text-transform: uppercase;
+            background-color: oklch(from var(--c-surface-secondary) l c h / 33%);
         }
 
         .tag {
@@ -315,12 +295,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sagittis v
 
         /* TABLET - Responsive Styles */
         @media (max-width: 768px) {
-            .table-wrap {
-                white-space: nowrap;
-            }
-
             table {
-                min-width: 100%; /* Ensure the table doesn't shrink */
+                min-width: 100%;
                 margin-bottom: var(--p-lg);
             }
         }

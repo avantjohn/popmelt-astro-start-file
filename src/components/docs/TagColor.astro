@@ -10,8 +10,32 @@ const { varName } = Astro.props;
 ---
 
 <script>
-    // import { animate, scroll } from 'motion';
-    // animate('.fade', { opacity: [0, 1] }, { duration: 2 });
+    import { animate, scroll } from 'motion';
+
+    const tags = document.querySelectorAll('.tag');
+
+    tags.forEach((tag) => {
+        tag.addEventListener('mouseenter', function () {
+            animate(
+                this,
+                {
+                    background: ['var(--c-surface-secondary)', 'oklch(from var(--c-surface-secondary) l c h / 66%)'],
+                    border: ['var(--c-border-secondary) 1px solid', 'var(--c-border-primary) 1px solid']
+                },
+                { duration: 0.5 }
+            );
+        });
+        tag.addEventListener('mouseleave', function () {
+            animate(
+                this,
+                {
+                    background: ['oklch(from var(--c-surface-secondary) l c h / 66%)', 'var(--c-surface-secondary)'],
+                    border: ['var(--c-border-primary) 1px solid', 'var(--c-border-secondary) 1px solid']
+                },
+                { duration: 0.5 }
+            );
+        });
+    });
 </script>
 
 <div class="tag">
