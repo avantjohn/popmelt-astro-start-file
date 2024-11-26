@@ -22,7 +22,7 @@ const { varName } = Astro.props;
                     background: ['var(--c-surface-secondary)', 'oklch(from var(--c-surface-secondary) l c h / 66%)'],
                     border: ['var(--c-border-secondary) 1px solid', 'var(--c-border-primary) 1px solid']
                 },
-                { duration: 0.5 }
+                { duration: 2 }
             );
         });
         tag.addEventListener('mouseleave', function () {
@@ -32,7 +32,7 @@ const { varName } = Astro.props;
                     background: ['oklch(from var(--c-surface-secondary) l c h / 66%)', 'var(--c-surface-secondary)'],
                     border: ['var(--c-border-primary) 1px solid', 'var(--c-border-secondary) 1px solid']
                 },
-                { duration: 0.5 }
+                { duration: 2 }
             );
         });
     });
