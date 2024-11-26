@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 import PageHeader from '../../components/docs/PageHeader.astro';
+import TagColor from '../../components/docs/TagColor.astro';
+
 const pageTitle = `borders`;
 ---
 
@@ -17,53 +19,202 @@ const pageTitle = `borders`;
         </section>
         <section>
             <div class="wrap">
-                <h2>Section</h2>
+                <div class="table-section">
+                    <div class="table-wrap">
+                        <table>
+                            <!-- Table Headers -->
+                            <thead>
+                                <tr class="fs-label-xs">
+                                    <td class="column-header"> Variable </td>
+                                    <td class="column-header"> Value </td>
+                                </tr>
+                                <!-- Border Radius -->
+                                <tr class="fs-label-sm">
+                                    <th>border radius</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--b-radius-xl" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="1.125rem" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="--b-radius-lg" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-item">
+                                            <TagColor varName="0.875rem" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Border Thickness -->
+                                <thead>
+                                    <tr class="fs-label-sm">
+                                        <th>border weight</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <!-- Border Radius -->
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="table-item">
+                                                <TagColor varName="--b-weight-thin" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="table-item">
+                                                <TagColor varName="1px" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="table-item">
+                                                <TagColor varName="--b-weight-thick" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="table-item">
+                                                <TagColor varName="2px" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
+
+    <style>
+        /* Page Layout Styles */
+
+        .fade {
+            opacity: 0;
+        }
+
+        .main-wrap {
+            max-width: 100%;
+            flex-grow: 1;
+        }
+
+        section {
+            width: 100%;
+            max-width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wrap {
+            padding: var(--p-lg);
+        }
+
+        /* Custom Styles */
+        /* Table Styles */
+
+        .table-wrap {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: var(--p-lg);
+            padding: var(--p-xl);
+            border: var(--c-border-primary) 1px solid;
+            background-color: var(--c-surface-primary);
+            border-radius: var(--b-radius-lg);
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--c-border-secondary) transparent;
+            margin-bottom: 4rem;
+            white-space: nowrap;
+        }
+
+        .table-wrap::-webkit-scrollbar {
+            height: 8px;
+            background: #f0f0f0;
+        }
+
+        .table-wrap::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .table-wrap::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        table {
+            flex-grow: 1;
+            background-color: var(--c-surface-primary);
+            border-collapse: collapse;
+            border-radius: var(--b-radius-lg);
+            outline: var(--c-border-primary) 1px solid;
+            outline-offset: -1px;
+            overflow: hidden;
+            table-layout: fixed;
+        }
+
+        tr {
+            padding: 1rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 1.125rem 1.5rem 1rem;
+            background-color: var(--c-surface-primary);
+            font-weight: inherit;
+            color: var(--c-text-secondary);
+        }
+
+        td {
+            background-color: var(--c-surface-primary);
+            border: var(--c-border-primary) 1px solid;
+        }
+
+        .table-item {
+            display: flex;
+            padding: 0.5rem;
+        }
+
+        .column-header {
+            padding: 1.125rem 1.5rem 1rem;
+            text-transform: uppercase;
+            background-color: oklch(from var(--c-surface-secondary) l c h / 33%);
+        }
+
+        /* LAPTOP SMALL - Responsive Styles */
+        @media (max-width: 1024px) {
+            .div {
+            }
+        }
+
+        /* TABLET - Responsive Styles */
+        @media (max-width: 768px) {
+            table {
+                min-width: 100%;
+                margin-bottom: var(--p-lg);
+            }
+        }
+
+        /* MOBILE - Responsive Styles */
+        @media (max-width: 425px) {
+            .div {
+            }
+        }
+    </style>
 </Layout>
-
-<style>
-    /* Page Layout Styles */
-
-    .fade {
-        opacity: 0;
-    }
-
-    .main-wrap {
-        max-width: 100%;
-        flex-grow: 1;
-    }
-
-    section {
-        width: 100%;
-        max-width: 100%;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .wrap {
-        padding: var(--p-xl);
-    }
-
-    /* Custom Styles */
-
-    /* LAPTOP SMALL - Responsive Styles */
-    @media (max-width: 1024px) {
-        .div {
-        }
-    }
-
-    /* TABLET - Responsive Styles */
-    @media (max-width: 768px) {
-        .div {
-        }
-    }
-
-    /* MOBILE - Responsive Styles */
-    @media (max-width: 425px) {
-        .div {
-        }
-    }
-</style>
