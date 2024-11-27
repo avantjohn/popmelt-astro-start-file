@@ -8,11 +8,11 @@ const pageTitle = `Popmelt Astro Minimal`;
 
 <script>
     import { animate, scroll } from 'motion';
-    animate('.fade', { opacity: [0, 1] }, { duration: 1, ease: 'easeInOut' });
+    animate('.home-fade', { opacity: [0, 1] }, { duration: 1, ease: 'easeInOut' });
 </script>
 
 <Layout title={pageTitle}>
-    <div class="main-wrap fade">
+    <div class="main-wrap home-fade">
         <section>
             <Hero />
         </section>
@@ -27,7 +27,7 @@ const pageTitle = `Popmelt Astro Minimal`;
 <style>
     /* Page Layout Styles */
 
-    .fade {
+    .home-fade {
         opacity: 0;
     }
 
