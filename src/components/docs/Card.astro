@@ -5,9 +5,10 @@ interface Props {
     title?: string;
     desc?: string;
     href?: string;
+    icon?: string;
 }
 
-const { title, desc, href } = Astro.props;
+const { title, desc, href, icon } = Astro.props;
 ---
 
 <script>
@@ -16,7 +17,9 @@ const { title, desc, href } = Astro.props;
 </script>
 
 <a href={href} class="card">
-    <div class="card-image"></div>
+    <div class="card-image">
+        <Icon name={icon} size="42%" />
+    </div>
     <div class="card-text-wrap">
         <div class="card-title">
             <div class="card-title-icon">
@@ -52,6 +55,9 @@ const { title, desc, href } = Astro.props;
         background-color: var(--c-fill-primary);
         border: var(--c-border-primary) 1px solid;
         border-radius: var(--b-radius-lg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .card-text-wrap {
