@@ -18,7 +18,7 @@ const { title, desc, href, icon } = Astro.props;
 
 <a href={href} class="card">
     <div class="card-image">
-        <Icon name={icon} size="42%" />
+        <Icon name={icon} size="42%" class="card-image-icon" />
     </div>
     <div class="card-text-wrap">
         <div class="card-title">
@@ -58,6 +58,10 @@ const { title, desc, href, icon } = Astro.props;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .card-image-icon {
+        opacity: 66%;
     }
 
     .card-text-wrap {
